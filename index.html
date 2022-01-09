@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Donate</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header id="about-uss" class="masthead-au">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading text-uppercase my-auto">
+                    DONATE NOW
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row xrow mx-auto">
+            <div class="col-md-5 col-sm-12 col-lg-5 mx-auto card text-center card-donation  ml-lg-5"
+                style="padding : 10px; font-size: 20px;">
+
+                <h2 style="font-family: Verdana, sans-serif;">Donate Once</h2>
+                <br><br><br>
+                <h3 style="font-family: Verdana, sans-serif; font-size: 1rem;">You will be redirected to our secure
+                    razorpay gateway for payment.</h3>
+                <br><br>
+                <a href="https://pages.razorpay.com/pl_IfwVqsOWL9zasN/view" target="_blank" role="button"
+                    class="button_donate_razorpay ml-auto mr-auto"
+                    style="display: inline-block; width:min-content">DONATE</a>
+
+            </div>
+
+            <div class="col-md-5 col-sm-12 col-lg-5 mx-auto card text-center card-donation card-donation2  ml-sm-0 ml-lg-5"
+                style="padding : 10px; font-size: 20px;">
+                <h2 style="font-family: Verdana, sans-serif;">Recurring Donation</h2>
+                <br><br>
+                <form action="" method="get" name="donate" id="donate_form">
+                    <p style="display: inline; padding:1rem; font-family: Verdana, sans-serif;">Time duration:</p>
+                    <select name="months" id="duration">
+                        <option value="3">3 months</option>
+                        <option value="6">6 months</option>
+                        <option value="12">1 year</option>
+                        <option value="18">1.5 year</option>
+                        <option value="24">2 years</option>
+                        <option value="30">2.5 years</option>
+                        <option value="36">3 years</option>
+                        <option value="42">3.5 years</option>
+                        <option value="48">4 years</option>
+                        <option value="54">4.5 years</option>
+                        <option value="60">5 years</option>
+                    </select>
+
+                    <br><br>
+
+                    <p style="display: inline; padding:1rem; margin-left: 1rem; font-family: Verdana, sans-serif;">
+                        Amount:
+                    </p>
+
+                    <select name="months" id="amount">
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+                        <option value="1000">1000</option>
+
+
+
+                    </select><br><br>
+                    <input type="submit" class="button_donate_razorpay" id="confirm" value="CONFIRM">
+                    <!-- <a href="#" role="button"  class="button_donate_razorpay" style="display: inline-block;">CONFIRM</a> -->
+
+                </form>
+            </div>
+        </div>
+    </div><br>
+
+    <script>
+        var money = document.getElementById('duration');
+        let donatebtn = document.getElementById('confirm');
+        donatebtn.addEventListener('click', sendToJs)
+
+        function sendToJs() {
+
+            let duration = document.getElementById('duration').value;
+            let amount = document.getElementById('amount').value;
+
+            if(amount==500){
+                switch(duration){
+                    case '3': alert("You want to Pay Rs500 for 3 months"); break;
+                    case '6': alert("You want to Pay Rs500 for 6 months"); break;
+                    case '12': alert("You want to Pay Rs500 for 12 months"); break;
+                    case '18': alert("You want to Pay Rs500 for 18 months"); break;
+                    case '24': alert("You want to Pay Rs500 for 24 months"); break;
+                    case '30': alert("You want to Pay Rs500 for 30 months"); break;
+                    case '36': alert("You want to Pay Rs500 for 36 months"); break;
+                    case '42': alert("You want to Pay Rs500 for 42 months"); break;
+                    case '48': alert("You want to Pay Rs500 for 48 months"); break;
+                    case '54': alert("You want to Pay Rs500 for 54 months"); break;
+                    case '60': alert("You want to Pay Rs500 for 60 months"); break;
+                    
+                }
+            }
+            else if(amount==600) {
+                switch(duration){
+                    case '3': alert("You want to Pay Rs600 for 3 months"); break;
+                    case '6': alert("You want to Pay Rs600 for 6 months"); break;
+                    case '12': alert("You want to Pay Rs600 for 12 months"); break;
+                    case '18': alert("You want to Pay Rs600 for 18 months"); break;
+                    case '24': alert("You want to Pay Rs600 for 24 months"); break;
+                    case '30': alert("You want to Pay Rs600 for 30 months"); break;
+                    case '36': alert("You want to Pay Rs600 for 36 months"); break;
+                    case '42': alert("You want to Pay Rs600 for 42 months"); break;
+                    case '48': alert("You want to Pay Rs600 for 48 months"); break;
+                    case '54': alert("You want to Pay Rs600 for 54 months"); break;
+                    case '60': alert("You want to Pay Rs600 for 60 months"); break;
+                    
+                }
+            }
+            else if(amount==700) {
+                switch(duration){
+                    case '3': alert("You want to Pay Rs700 for 3 months"); break;
+                    case '6': alert("You want to Pay Rs700 for 6 months"); break;
+                    case '12': alert("You want to Pay Rs700 for 12 months"); break;
+                    case '18': alert("You want to Pay Rs700 for 18 months"); break;
+                    case '24': alert("You want to Pay Rs700 for 24 months"); break;
+                    case '30': alert("You want to Pay Rs700 for 30 months"); break;
+                    case '36': alert("You want to Pay Rs700 for 36 months"); break;
+                    case '42': alert("You want to Pay Rs700 for 42 months"); break;
+                    case '48': alert("You want to Pay Rs700 for 48 months"); break;
+                    case '54': alert("You want to Pay Rs700 for 54 months"); break;
+                    case '60': alert("You want to Pay Rs700 for 60 months"); break;
+                    
+                }
+            }
+            else if(amount==800) {
+                switch(duration){
+                    case '3': alert("You want to Pay Rs800 for 3 months"); break;
+                    case '6': alert("You want to Pay Rs800 for 6 months"); break;
+                    case '12': alert("You want to Pay Rs800 for 12 months"); break;
+                    case '18': alert("You want to Pay Rs800 for 18 months"); break;
+                    case '24': alert("You want to Pay Rs800 for 24 months"); break;
+                    case '30': alert("You want to Pay Rs800 for 30 months"); break;
+                    case '36': alert("You want to Pay Rs800 for 36 months"); break;
+                    case '42': alert("You want to Pay Rs800 for 42 months"); break;
+                    case '48': alert("You want to Pay Rs800 for 48 months"); break;
+                    case '54': alert("You want to Pay Rs800 for 54 months"); break;
+                    case '60': alert("You want to Pay Rs800 for 60 months"); break;
+                    
+                }
+            }
+            else if(amount==900) {
+                switch(duration){
+                    case '3': alert("You want to Pay Rs900 for 3 months"); break;
+                    case '6': alert("You want to Pay Rs900 for 6 months"); break;
+                    case '12': alert("You want to Pay Rs900 for 12 months"); break;
+                    case '18': alert("You want to Pay Rs900 for 18 months"); break;
+                    case '24': alert("You want to Pay Rs900 for 24 months"); break;
+                    case '30': alert("You want to Pay Rs900 for 30 months"); break;
+                    case '36': alert("You want to Pay Rs900 for 36 months"); break;
+                    case '42': alert("You want to Pay Rs900 for 42 months"); break;
+                    case '48': alert("You want to Pay Rs900 for 48 months"); break;
+                    case '54': alert("You want to Pay Rs900 for 54 months"); break;
+                    case '60': alert("You want to Pay Rs900 for 60 months"); break;
+                    
+                }
+            }
+            else if(amount==1000) {
+                switch(duration){
+                    case '3': alert("You want to Pay Rs1000 for 3 months"); break;
+                    case '6': alert("You want to Pay Rs1000 for 6 months"); break;
+                    case '12': alert("You want to Pay Rs1000 for 12 months"); break;
+                    case '18': alert("You want to Pay Rs1000 for 18 months"); break;
+                    case '24': alert("You want to Pay Rs1000 for 24 months"); break;
+                    case '30': alert("You want to Pay Rs1000 for 30 months"); break;
+                    case '36': alert("You want to Pay Rs1000 for 36 months"); break;
+                    case '42': alert("You want to Pay Rs1000 for 42 months"); break;
+                    case '48': alert("You want to Pay Rs1000 for 48 months"); break;
+                    case '54': alert("You want to Pay Rs1000 for 54 months"); break;
+                    case '60': alert("You want to Pay Rs1000 for 60 months"); break;
+                    
+                }
+            }
+            
+        }
+
+        // let donate = document.getElementById('donate_form');
+        // // let formData = new FormData(donate.months.value);
+
+        // console.log(document.getElementById('duration').value);
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
