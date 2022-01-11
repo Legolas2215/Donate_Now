@@ -22,174 +22,231 @@
             </div>
         </div>
     </header>
+
     <div class="container-fluid">
         <div class="row xrow mx-auto">
-            <div class="col-md-5 col-sm-12 col-lg-5 mx-auto card text-center card-donation  ml-lg-5"
+            <div class="col-md-4 col-sm-12 col-lg-4 mx-auto card text-center card-donation"
                 style="padding : 10px; font-size: 20px;">
+                <ul class="nav nav-tabs text-center ml-auto mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" data-toggle="tab" href="#once">Donate Once</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" data-toggle="tab" href="#monthly">Donate Monthly</a>
+                    </li>
 
-                <h2 style="font-family: Verdana, sans-serif;">Donate Once</h2>
-                <br><br><br>
-                <h3 style="font-family: Verdana, sans-serif; font-size: 1rem;">You will be redirected to our secure
-                    razorpay gateway for payment.</h3>
-                <br><br>
-                <a href="https://pages.razorpay.com/pl_IfwVqsOWL9zasN/view" target="_blank" role="button"
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane container active" id="once">
+                        <br><br><br>
+                        <h3 style="font-family: Verdana, sans-serif; font-size: 1rem;">You will be redirected to our
+                            secure
+                            razorpay gateway for payment.</h3>
+                        <br><br>
+                        <!-- <a href="https://pages.razorpay.com/pl_IfwVqsOWL9zasN/view" target="_blank" role="button"
                     class="button_donate_razorpay ml-auto mr-auto"
-                    style="display: inline-block; width:min-content">DONATE</a>
+                    style="display: inline-block; width:min-content">DONATE</a> -->
+                        <form>
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_IfjaJbYuWZgFvz" async>
+                                </script>
+                        </form>
 
-            </div>
+                    </div>
+                    <div class="tab-pane container fade" id="monthly">
+                        
+                        <br><br>
+                        <form action="" method="get" name="donate" id="donate_form" onsubmit="noReload">
+                            <p style="display: inline; padding:1rem; font-family: Verdana, sans-serif;">Time duration:
+                            </p>
+                            <select name="months" id="duration">
 
-            <div class="col-md-5 col-sm-12 col-lg-5 mx-auto card text-center card-donation card-donation2  ml-sm-0 ml-lg-5"
-                style="padding : 10px; font-size: 20px;">
-                <h2 style="font-family: Verdana, sans-serif;">Recurring Donation</h2>
-                <br><br>
-                <form action="" method="get" name="donate" id="donate_form">
-                    <p style="display: inline; padding:1rem; font-family: Verdana, sans-serif;">Time duration:</p>
-                    <select name="months" id="duration">
-                        <option value="3">3 months</option>
-                        <option value="6">6 months</option>
-                        <option value="12">1 year</option>
-                        <option value="18">1.5 year</option>
-                        <option value="24">2 years</option>
-                        <option value="30">2.5 years</option>
-                        <option value="36">3 years</option>
-                        <option value="42">3.5 years</option>
-                        <option value="48">4 years</option>
-                        <option value="54">4.5 years</option>
-                        <option value="60">5 years</option>
-                    </select>
+                                <option value="6">6 months</option>
+                                <option value="12">1 year</option>
+                                <option value="18">1.5 year</option>
+                                <option value="24">2 years</option>
+                                <option value="30">2.5 years</option>
+                                <option value="36">3 years</option>
+                                <option value="42">3.5 years</option>
+                                <option value="48">4 years</option>
+                                <option value="54">4.5 years</option>
+                                <option value="60">5 years</option>
+                            </select>
 
-                    <br><br>
+                            <br><br>
 
-                    <p style="display: inline; padding:1rem; margin-left: 1rem; font-family: Verdana, sans-serif;">
-                        Amount:
-                    </p>
+                            <p
+                                style="display: inline; padding:1rem; margin-left: 1rem; font-family: Verdana, sans-serif;">
+                                Amount (Rs ):
+                            </p>
 
-                    <select name="months" id="amount">
-                        <option value="500">500</option>
-                        <option value="600">600</option>
-                        <option value="700">700</option>
-                        <option value="800">800</option>
-                        <option value="900">900</option>
-                        <option value="1000">1000</option>
+                            <div class="input-div">
+                                <div class="prev-btn">-</div>
+                                <input type="text" class="input-money" placeholder="Rs" readonly>
+                                <div class="next-btn">+</div>
+                            </div><br><br>
+                            <input type="submit" class="button_donate_razorpay" id="confirm" value="CONFIRM"
+                                style="font-size: 0.8rem;"><br> <br>
+                            <h3 style="font-family: Verdana, sans-serif; font-size: 1rem; visibility: hidden;" id="donate_now">Click on "Donate Now" to get
+                                redirected to our secure
+                                razorpay gateway for payment</h3><br>
+                            <a href="#" role="button" class="button_donate_razorpay_2" id="razorpay_donate" style="display: inline-block; visibility: hidden
+                    ; padding: 0.5rem; font-size: 1rem;">Donate Now <br><img src="Razorpay.png"
+                                    style="width:5rem;"></a>
 
+                            
+                                
+                        </form>
 
+                    </div>
 
-                    </select><br><br>
-                    <input type="submit" class="button_donate_razorpay" id="confirm" value="CONFIRM">
-                    <!-- <a href="#" role="button"  class="button_donate_razorpay" style="display: inline-block;">CONFIRM</a> -->
+                </div>
 
-                </form>
             </div>
         </div>
-    </div><br>
+    </div>
+
+
+   
+
+
 
     <script>
         var money = document.getElementById('duration');
         let donatebtn = document.getElementById('confirm');
         donatebtn.addEventListener('click', sendToJs)
 
-        function sendToJs() {
+        const amount_list = [500, 1000, 1500, 2000, 5000, 10000]
 
+            const next = document.querySelector('.next-btn');
+            const prev = document.querySelector('.prev-btn');
+            const inputMoney = document.querySelector('.input-money');
+
+            let current = 0;
+            inputMoney.value = amount_list[current];
+            next.addEventListener('click', () => {
+                current++;
+                if (current === amount_list.length) {
+                    current--;
+                }
+                inputMoney.value = amount_list[current];
+            });
+
+            prev.addEventListener('click', () => {
+                current--;
+                if (current === -1) {
+                    current++;
+                }
+                inputMoney.value = amount_list[current];
+            });
+
+        function sendToJs(e) {
+            event.preventDefault();
             let duration = document.getElementById('duration').value;
-            let amount = document.getElementById('amount').value;
+            let amount = document.querySelector('.input-money').value;
+            document.querySelector('#donate_now').style.visibility='visible';
 
-            if(amount==500){
-                switch(duration){
-                    case '3': alert("You want to Pay Rs500 for 3 months"); break;
-                    case '6': alert("You want to Pay Rs500 for 6 months"); break;
-                    case '12': alert("You want to Pay Rs500 for 12 months"); break;
-                    case '18': alert("You want to Pay Rs500 for 18 months"); break;
-                    case '24': alert("You want to Pay Rs500 for 24 months"); break;
-                    case '30': alert("You want to Pay Rs500 for 30 months"); break;
-                    case '36': alert("You want to Pay Rs500 for 36 months"); break;
-                    case '42': alert("You want to Pay Rs500 for 42 months"); break;
-                    case '48': alert("You want to Pay Rs500 for 48 months"); break;
-                    case '54': alert("You want to Pay Rs500 for 54 months"); break;
-                    case '60': alert("You want to Pay Rs500 for 60 months"); break;
-                    
+            if (amount == 500) {
+                switch (duration) {
+                    // case '3': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "";  break;
+                    case '6': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/9RnCYJt"; break;
+                    case '12': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/AZQq6Mne"; break;
+                    case '18': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/f7qtufqyxF"; break;
+                    case '24': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/Abj6KD3xdY"; break;
+                    case '30': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/YEWbEzlO"; break;
+                    case '36': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/Hx7HwU7S"; break;
+                    case '42': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/7IG7Ko3"; break;
+                    case '48': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/xMKIPE9O"; break;
+                    case '54': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/kVyN8sxF"; break;
+                    case '60': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/V9I0VVfO"; break;
+
                 }
             }
-            else if(amount==600) {
-                switch(duration){
-                    case '3': alert("You want to Pay Rs600 for 3 months"); break;
-                    case '6': alert("You want to Pay Rs600 for 6 months"); break;
-                    case '12': alert("You want to Pay Rs600 for 12 months"); break;
-                    case '18': alert("You want to Pay Rs600 for 18 months"); break;
-                    case '24': alert("You want to Pay Rs600 for 24 months"); break;
-                    case '30': alert("You want to Pay Rs600 for 30 months"); break;
-                    case '36': alert("You want to Pay Rs600 for 36 months"); break;
-                    case '42': alert("You want to Pay Rs600 for 42 months"); break;
-                    case '48': alert("You want to Pay Rs600 for 48 months"); break;
-                    case '54': alert("You want to Pay Rs600 for 54 months"); break;
-                    case '60': alert("You want to Pay Rs600 for 60 months"); break;
-                    
+            else if (amount == 1000) {
+                switch (duration) {
+                    // case '3': console.log("You want to Pay Rs 1000 for 3 months");   break;
+                    case '6': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/amFQjRuM1"; break;
+                    case '12': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/sZKVX4V"; break;
+                    case '18': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/wmHZvH2C5w"; break;
+                    case '24': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/AhLL6fQzhS"; break;
+                    case '30': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/MxtoSdw"; break;
+                    case '36': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/e3mScv3uAW"; break;
+                    case '42': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/f1NZiMXglJ"; break;
+                    case '48': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/CEnK1do"; break;
+                    case '54': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/OADSzEj"; break;
+                    case '60': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/PZlzuZQgOv"; break;
+
                 }
             }
-            else if(amount==700) {
-                switch(duration){
-                    case '3': alert("You want to Pay Rs700 for 3 months"); break;
-                    case '6': alert("You want to Pay Rs700 for 6 months"); break;
-                    case '12': alert("You want to Pay Rs700 for 12 months"); break;
-                    case '18': alert("You want to Pay Rs700 for 18 months"); break;
-                    case '24': alert("You want to Pay Rs700 for 24 months"); break;
-                    case '30': alert("You want to Pay Rs700 for 30 months"); break;
-                    case '36': alert("You want to Pay Rs700 for 36 months"); break;
-                    case '42': alert("You want to Pay Rs700 for 42 months"); break;
-                    case '48': alert("You want to Pay Rs700 for 48 months"); break;
-                    case '54': alert("You want to Pay Rs700 for 54 months"); break;
-                    case '60': alert("You want to Pay Rs700 for 60 months"); break;
-                    
+            else if (amount == 1500) {
+                switch (duration) {
+                    // case '3': console.log("You want to Pay Rs 1500 for 3 months");   break;
+                    case '6': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/O0VKr4D"; break;
+                    case '12': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/HCSbSc0M"; break;
+                    case '18': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/klKzfJcT"; break;
+                    case '24': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/AeGeQMtk3Q"; break;
+                    case '30': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/1Auw9iM"; break;
+                    case '36': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/7auRjpPu"; break;
+                    case '42': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/9NeFQB4"; break;
+                    case '48': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/jrmgFgjSNZ"; break;
+                    case '54': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/FbBX42vOA"; break;
+                    case '60': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/630Yyg2D1l"; break;
+
                 }
             }
-            else if(amount==800) {
-                switch(duration){
-                    case '3': alert("You want to Pay Rs800 for 3 months"); break;
-                    case '6': alert("You want to Pay Rs800 for 6 months"); break;
-                    case '12': alert("You want to Pay Rs800 for 12 months"); break;
-                    case '18': alert("You want to Pay Rs800 for 18 months"); break;
-                    case '24': alert("You want to Pay Rs800 for 24 months"); break;
-                    case '30': alert("You want to Pay Rs800 for 30 months"); break;
-                    case '36': alert("You want to Pay Rs800 for 36 months"); break;
-                    case '42': alert("You want to Pay Rs800 for 42 months"); break;
-                    case '48': alert("You want to Pay Rs800 for 48 months"); break;
-                    case '54': alert("You want to Pay Rs800 for 54 months"); break;
-                    case '60': alert("You want to Pay Rs800 for 60 months"); break;
-                    
+            else if (amount == 2000) {
+                switch (duration) {
+                    // case '3': console.log("You want to Pay Rs 2000 for 3 months");   break;
+                    case '6': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/vMrJ4fgHb"; break;
+                    case '12': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/EVMkhhR"; break;
+                    case '18': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/sAabUPkjpF"; break;
+                    case '24': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/MHpnzWlIK6"; break;
+                    case '30': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/IbIhCYaKF5"; break;
+                    case '36': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/6Ua9gt5k5F"; break;
+                    case '42': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/GiG88n9W"; break;
+                    case '48': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/Vc4wqXIm"; break;
+                    case '54': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/fPJm3az"; break;
+                    case '60': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/LKFjwC2yYj"; break;
+
                 }
             }
-            else if(amount==900) {
-                switch(duration){
-                    case '3': alert("You want to Pay Rs900 for 3 months"); break;
-                    case '6': alert("You want to Pay Rs900 for 6 months"); break;
-                    case '12': alert("You want to Pay Rs900 for 12 months"); break;
-                    case '18': alert("You want to Pay Rs900 for 18 months"); break;
-                    case '24': alert("You want to Pay Rs900 for 24 months"); break;
-                    case '30': alert("You want to Pay Rs900 for 30 months"); break;
-                    case '36': alert("You want to Pay Rs900 for 36 months"); break;
-                    case '42': alert("You want to Pay Rs900 for 42 months"); break;
-                    case '48': alert("You want to Pay Rs900 for 48 months"); break;
-                    case '54': alert("You want to Pay Rs900 for 54 months"); break;
-                    case '60': alert("You want to Pay Rs900 for 60 months"); break;
-                    
+            else if (amount == 5000) {
+                switch (duration) {
+                    // case '3': console.log("You want to Pay Rs 5000 for 3 months");   break;
+                    case '6': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/Bakz2PgI"; break;
+                    case '12': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/0hcpRZTH1A"; break;
+                    case '18': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/vd1DFJmFGl"; break;
+                    case '24': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/ZSoiZNjrfc"; break;
+                    case '30': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/G7d95Ug"; break;
+                    case '36': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/1ktCXdcn"; break;
+                    case '42': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/lAlsNUJB69"; break;
+                    case '48': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/qovAGdALC"; break;
+                    case '54': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/E4O26HXB"; break;
+                    case '60': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/gdFojk3qLA"; break;
+
                 }
             }
-            else if(amount==1000) {
-                switch(duration){
-                    case '3': alert("You want to Pay Rs1000 for 3 months"); break;
-                    case '6': alert("You want to Pay Rs1000 for 6 months"); break;
-                    case '12': alert("You want to Pay Rs1000 for 12 months"); break;
-                    case '18': alert("You want to Pay Rs1000 for 18 months"); break;
-                    case '24': alert("You want to Pay Rs1000 for 24 months"); break;
-                    case '30': alert("You want to Pay Rs1000 for 30 months"); break;
-                    case '36': alert("You want to Pay Rs1000 for 36 months"); break;
-                    case '42': alert("You want to Pay Rs1000 for 42 months"); break;
-                    case '48': alert("You want to Pay Rs1000 for 48 months"); break;
-                    case '54': alert("You want to Pay Rs1000 for 54 months"); break;
-                    case '60': alert("You want to Pay Rs1000 for 60 months"); break;
-                    
+            else if (amount == 10000) {
+                switch (duration) {
+                    // case '3': console.log("You want to Pay Rs 10000 for 3 months");   break;
+                    case '6': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/Kb48Ojg"; break;
+                    case '12': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/lTq1txb"; break;
+                    case '18': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/1hBN3Mb9r"; break;
+                    case '24': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/W3EyyqqJ"; break;
+                    case '30': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/CEmU2KCIO"; break;
+                    case '36': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/Rr3ovLyGw"; break;
+                    case '42': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/oszz5QU"; break;
+                    case '48': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/oGTKMInmfc"; break;
+                    case '54': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/EJ7jBTrQ"; break;
+                    case '60': document.getElementById('razorpay_donate').style.visibility = 'visible'; document.getElementById('razorpay_donate').href = "https://rzp.io/i/iW30xYZc"; break;
+
                 }
             }
+
             
+
         }
 
         // let donate = document.getElementById('donate_form');
